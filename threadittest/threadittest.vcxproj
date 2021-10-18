@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D0DE36A0-72A8-4645-81DF-DCD8DDE85436}</ProjectGuid>
+    <RootNamespace>threadittest</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SHARED_LIBRARY)\codelib\include;$(SHARED_LIBRARY)\codelib\include\unittest++;$(SHARED_LIBRARY)\$(SolutionName)\include\singleton;$(SHARED_LIBRARY)\$(SolutionName)\include\threadit;$(SHARED_LIBRARY)\codelib\include\libconfig++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LIBCONFIG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>del "$(SHARED_LIBRARY)\$(SolutionName)\$(ProjectName)\$(Configuration)\lib\$(TargetName).*"  /Q /F
+del "$(SHARED_LIBRARY)\$(SolutionName)\$(ProjectName)\$(Configuration)\bin\$(TargetName).*"  /Q /F
+
+xcopy "$(TargetDir)""$(TargetName)"*.lib "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*.lib"  /S /C /I /Y
+xcopy "$(TargetDir)""$(TargetName)"*.pdb "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*.pdb"  /S /C /I /Y
+xcopy "$(TargetDir)""$(TargetName)"*.exe "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\bin\*.exe"  /S /C /I /Y
+xcopy "$(ProjectDir)config\*.cfg" "$(TargetDir)/*" /S /C /I /Y /D
+xcopy "$(ProjectDir)config\*.properties" "$(TargetDir)/*" /S /C /I /Y /D
+xcopy "$(ProjectDir)config\*.cfg" "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\bin\*.cfg"  /S /C /I /Y
+xcopy "$(ProjectDir)config\*.properties" "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\bin\*.properties"  /S /C /I /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SHARED_LIBRARY)\codelib\include;$(SHARED_LIBRARY)\codelib\include\unittest++;$(SHARED_LIBRARY)\$(SolutionName)\include\singleton;$(SHARED_LIBRARY)\$(SolutionName)\include\threadit;$(SHARED_LIBRARY)\codelib\include\libconfig++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;LIBCONFIG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>applibrary.lib;libconfig++.lib;log4cpp.lib;unittest++.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SHARED_LIBRARY)\codelib\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>del "$(SHARED_LIBRARY)\$(SolutionName)\$(ProjectName)\$(Configuration)\lib\$(TargetName).*"  /Q /F
+del "$(SHARED_LIBRARY)\$(SolutionName)\$(ProjectName)\$(Configuration)\bin\$(TargetName).*"  /Q /F
+
+xcopy "$(TargetDir)""$(TargetName)"*.lib "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*.lib"  /S /C /I /Y
+xcopy "$(TargetDir)""$(TargetName)"*.pdb "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*.pdb"  /S /C /I /Y
+xcopy "$(TargetDir)""$(TargetName)"*.exe "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\bin\*.exe"  /S /C /I /Y
+xcopy "$(ProjectDir)config\*.cfg" "$(TargetDir)/*" /S /C /I /Y /D
+xcopy "$(ProjectDir)config\*.properties" "$(TargetDir)/*" /S /C /I /Y /D
+xcopy "$(ProjectDir)config\*.cfg" "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\bin\*.cfg"  /S /C /I /Y
+xcopy "$(ProjectDir)config\*.properties" "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\bin\*.properties"  /S /C /I /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\TestActive.cpp" />
+    <ClCompile Include="src\TestDataBuffer.cpp" />
+    <ClCompile Include="src\testmtqueue.cpp" />
+    <ClCompile Include="src\TestObserverPattern.cpp" />
+    <ClCompile Include="src\TestProtectedQueue.cpp" />
+    <ClCompile Include="src\TestSingleton.cpp" />
+    <ClCompile Include="src\TestThreadIt.cpp" />
+    <ClCompile Include="src\TestThreadItObserver.cpp" />
+    <ClCompile Include="src\TestThreadItWorkTargets.cpp" />
+    <ClCompile Include="src\TestTimeIt.cpp" />
+    <ClCompile Include="src\threaditiftest\CIComponentA.cpp" />
+    <ClCompile Include="src\threaditiftest\CIComponentB.cpp" />
+    <ClCompile Include="src\threaditiftest\ComponentAImpl.cpp" />
+    <ClCompile Include="src\threaditiftest\ComponentBImpl.cpp" />
+    <ClCompile Include="src\threaditiftest\stdafx.cpp" />
+    <ClCompile Include="src\threaditiftest\ThreadItInterfaceTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\threaditiftest\CIComponentA.h" />
+    <ClInclude Include="src\threaditiftest\CIComponentB.h" />
+    <ClInclude Include="src\threaditiftest\ComponentAImpl.h" />
+    <ClInclude Include="src\threaditiftest\ComponentBImpl.h" />
+    <ClInclude Include="src\threaditiftest\stdafx.h" />
+    <ClInclude Include="src\threaditiftest\targetver.h" />
+    <ClInclude Include="src\uintdataitem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\threadittest.cfg" />
+    <None Include="config\threadittest_log4cpp.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\threadit\threadit.vcxproj">
+      <Project>{d1b02f02-5c9f-47a9-b31b-e9f3cdf353db}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

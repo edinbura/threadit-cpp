@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\active.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataBuffer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dataqueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\isafethreaditinterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ithreaditinterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Observer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QLock.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\singleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\strutil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Subject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\threadit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\threaditnotifier.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\threaditobserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimeIt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\worktarget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Active.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\apputils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataBuffer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dataitem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\icloneable.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\isafethreaditinterface.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ithreaditinterface.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mtqueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Observer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtectedQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QLock.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\singleton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\strutil.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Subject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\testresult.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\testresultq.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threadit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadItCallback.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threaditmessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threaditnotifier.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threaditobserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadItWorkTargets.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimeIt.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\worktarget.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

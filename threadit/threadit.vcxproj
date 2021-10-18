@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D1B02F02-5C9F-47A9-B31B-E9F3CDF353DB}</ProjectGuid>
+    <RootNamespace>threadit</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>D:\workspace\ashkel\github\threadit-cpp\plogger\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SHARED_LIBRARY)\codelib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>del "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /Q /F
+del "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\$(TargetName).*"  /Q /F
+xcopy "$(ProjectDir)src\*.h" "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*.*" /S /C /I /Y /R /Q
+attrib +R "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /S
+xcopy "$(OutDir)$(TargetName).*"  "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*"  /S /C /I /F /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SHARED_LIBRARY)\codelib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>del "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /Q /F
+del "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\$(TargetName).*"  /Q /F
+xcopy "$(ProjectDir)src\*.h" "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*.*" /S /C /I /Y /R /Q
+attrib +R "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /S
+xcopy "$(OutDir)$(TargetName).*"  "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*"  /S /C /I /F /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\active.cpp" />
+    <ClCompile Include="src\DataBuffer.cpp" />
+    <ClCompile Include="src\dataqueue.cpp" />
+    <ClCompile Include="src\isafethreaditinterface.cpp" />
+    <ClCompile Include="src\ithreaditinterface.cpp" />
+    <ClCompile Include="src\Observer.cpp" />
+    <ClCompile Include="src\QLock.cpp" />
+    <ClCompile Include="src\singleton.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\strutil.cpp" />
+    <ClCompile Include="src\Subject.cpp" />
+    <ClCompile Include="src\threadit.cpp" />
+    <ClCompile Include="src\threaditnotifier.cpp" />
+    <ClCompile Include="src\threaditobserver.cpp" />
+    <ClCompile Include="src\TimeIt.cpp" />
+    <ClCompile Include="src\worktarget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Active.h" />
+    <ClInclude Include="src\apputils.h" />
+    <ClInclude Include="src\DataBuffer.h" />
+    <ClInclude Include="src\dataitem.h" />
+    <ClInclude Include="src\DataQueue.h" />
+    <ClInclude Include="src\icloneable.h" />
+    <ClInclude Include="src\isafethreaditinterface.h" />
+    <ClInclude Include="src\ithreaditinterface.h" />
+    <ClInclude Include="src\mtqueue.h" />
+    <ClInclude Include="src\Observer.h" />
+    <ClInclude Include="src\ProtectedQueue.h" />
+    <ClInclude Include="src\QLock.h" />
+    <ClInclude Include="src\singleton.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\strutil.h" />
+    <ClInclude Include="src\Subject.h" />
+    <ClInclude Include="src\testresult.h" />
+    <ClInclude Include="src\testresultq.h" />
+    <ClInclude Include="src\threadit.h" />
+    <ClInclude Include="src\ThreadItCallback.h" />
+    <ClInclude Include="src\threaditmessage.h" />
+    <ClInclude Include="src\threaditnotifier.h" />
+    <ClInclude Include="src\threaditobserver.h" />
+    <ClInclude Include="src\ThreadItWorkTargets.h" />
+    <ClInclude Include="src\TimeIt.h" />
+    <ClInclude Include="src\utils.h" />
+    <ClInclude Include="src\worktarget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3EAF47BC-2152-4C0C-AC17-69DE90357FD1}</ProjectGuid>
+    <RootNamespace>singleton</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SHARED_LIBRARY)\codelib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>del "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /Q /F
+del "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\$(TargetName).*"  /Q /F
+xcopy "$(ProjectDir)src\*.h" "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*.*" /S /C /I /Y /R /Q
+attrib +R "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /S
+xcopy "$(OutDir)$(TargetName).*"  "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*"  /S /C /I /F /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SHARED_LIBRARY)\codelib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>del "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /Q /F
+del "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\$(TargetName).*"  /Q /F
+xcopy "$(ProjectDir)src\*.h" "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*.*" /S /C /I /Y /R /Q
+attrib +R "$(SHARED_LIBRARY)\$(SolutionName)\include\$(ProjectName)\*" /S
+xcopy "$(OutDir)$(TargetName).*"  "$(SHARED_LIBRARY)\$(SolutionName)\$(Configuration)\lib\*"  /S /C /I /F /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EventWrap.cpp" />
+    <ClCompile Include="src\FairRWLock.cpp" />
+    <ClCompile Include="src\Gate.cpp" />
+    <ClCompile Include="src\KeyChain.cpp" />
+    <ClCompile Include="src\LockGuard.cpp" />
+    <ClCompile Include="src\RWLockableBase.cpp" />
+    <ClCompile Include="src\SemaphoreWrap.cpp" />
+    <ClCompile Include="src\SimpleTimer.cpp" />
+    <ClCompile Include="src\Singleton.cpp" />
+    <ClCompile Include="src\SingletonBase.cpp" />
+    <ClCompile Include="src\SingletonContainer.cpp" />
+    <ClCompile Include="src\SingletonExample.cpp" />
+    <ClCompile Include="src\SingletonObserver.cpp" />
+    <ClCompile Include="src\SingletonTemplate.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\WPriorityRWLock.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\EventWrap.h" />
+    <ClInclude Include="src\FairRWLock.h" />
+    <ClInclude Include="src\Gate.h" />
+    <ClInclude Include="src\KeyChain.h" />
+    <ClInclude Include="src\LockableObject.h" />
+    <ClInclude Include="src\LockGuard.h" />
+    <ClInclude Include="src\RWLockableBase.h" />
+    <ClInclude Include="src\SemaphoreWrap.h" />
+    <ClInclude Include="src\SimpleTimer.h" />
+    <ClInclude Include="src\Singleton.h" />
+    <ClInclude Include="src\SingletonBase.h" />
+    <ClInclude Include="src\SingletonContainer.h" />
+    <ClInclude Include="src\SingletonExample.h" />
+    <ClInclude Include="src\SingletonObserver.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\TSingleton.h" />
+    <ClInclude Include="src\WPriorityRWLock.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

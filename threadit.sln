@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "threadit", "threadit\threadit.vcxproj", "{D1B02F02-5C9F-47A9-B31B-E9F3CDF353DB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "threadittest", "threadittest\threadittest.vcxproj", "{D0DE36A0-72A8-4645-81DF-DCD8DDE85436}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest++", "UnitTest++\UnitTest++.vsnet2005.vcxproj", "{64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1B02F02-5C9F-47A9-B31B-E9F3CDF353DB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D1B02F02-5C9F-47A9-B31B-E9F3CDF353DB}.Debug|Win32.Build.0 = Debug|Win32
+		{D1B02F02-5C9F-47A9-B31B-E9F3CDF353DB}.Release|Win32.ActiveCfg = Release|Win32
+		{D1B02F02-5C9F-47A9-B31B-E9F3CDF353DB}.Release|Win32.Build.0 = Release|Win32
+		{D0DE36A0-72A8-4645-81DF-DCD8DDE85436}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D0DE36A0-72A8-4645-81DF-DCD8DDE85436}.Debug|Win32.Build.0 = Debug|Win32
+		{D0DE36A0-72A8-4645-81DF-DCD8DDE85436}.Release|Win32.ActiveCfg = Release|Win32
+		{D0DE36A0-72A8-4645-81DF-DCD8DDE85436}.Release|Win32.Build.0 = Release|Win32
+		{64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6}.Debug|Win32.Build.0 = Debug|Win32
+		{64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6}.Release|Win32.ActiveCfg = Release|Win32
+		{64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA5B5353-7577-4230-90AB-339724B99285}
+		VisualSVNWorkingCopyRoot = ..
+	EndGlobalSection
+EndGlobal
