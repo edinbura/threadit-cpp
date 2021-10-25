@@ -28,11 +28,11 @@ processing is taking to long and the request queue is increasing in size.
 
 This project uses the following libraries:
 
-<h1 style="font-size:120%;">Log for C++  </h1>
+<h1 style="font-size:110%;">Log for C++  </h1>
 Log for C++ is a library of C++ classes for flexible logging to files, syslog and other destinations. It is modeled after the Log for Java library (http://jakarta.apache.org/log4j/), staying as close to their API as is reasonable.
 
 
-<h1 style="font-size:120%;"> UnitTest++  </h1> 
+<h1 style="font-size:110%;"> UnitTest++  </h1> 
 UnitTest++ is a lightweight unit testing framework for C++. It was designed to do test-driven development on a wide variety of platforms. Simplicity, portability, speed, and small footprint are all very important aspects of UnitTest++. UnitTest++ is mostly standard C++ and makes minimal use of advanced library and language features, which means it should be easily portable to just about any platform. Out of the box, the following platforms are supported:
 
 * Windows
