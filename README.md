@@ -25,3 +25,8 @@ impacting on the user response. When work is complete the User Interface is noti
 
 Another use case on the server is to accept incoming requests with the ability to check the incoming queue size and then take action if the 
 processing is taking to long and the request queue is increasing in size.
+
+This project uses the following libraries:
+
+Log for C++ is a library of C++ classes for flexible logging to files, syslog and other destinations. It is modeled after the Log for Java library (http://jakarta.apache.org/log4j/), staying as close to their API as is reasonable.
+
