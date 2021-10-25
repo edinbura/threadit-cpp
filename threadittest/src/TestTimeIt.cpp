@@ -1,7 +1,25 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
- * Title: TestProtectedQueue
- * Description: TestProtectedQueue contains unit tests for the CProtectedQueue class. 
- * The purpose of these tests is to excercise as many methods of the CProtectedQueue
+ * Title: TestTimeIt
+ * Description: TestTimeIt contains unit tests for the CTimeIt class. 
+ * The purpose of these tests is to excercise as many methods of the CTimeIt
  * class as possible so that the class behaviour is correct and the class 
  * can be regression tested as part of an automated test suite. 
  *
@@ -21,7 +39,7 @@
 
 
 /**
- * Test_TimeIt_insertItem is a unit test that adds the specified number of elements
+ * Test_TimeIt_timing is a unit test that adds the specified number of elements
  * into the queue and verfies that the insertItem method adds these elements. The test
  * is based on the size of the elements in the queue buffer as returned by the Size 
  * method.

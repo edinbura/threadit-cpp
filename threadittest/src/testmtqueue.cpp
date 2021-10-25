@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
 /**
  * Title: TestMtQueue
  * Description: TestMtQueue contains unit tests for the CMtQueue class. 
@@ -13,11 +30,15 @@
  */
 
 #include "stdafx.h"
-#include <UnitTest++.h>
+#include "UnitTestPP.h"
+#include "TimeHelpers.h"
+#include "TestResults.h"
+#include "TestDetails.h"
 #include <mtqueue.h>
 #include <log4cpp/Category.hh>
 #include <log4cpp/BasicConfigurator.hh>
 #include <log4cpp/PropertyConfigurator.hh>
+
 
 /** The number of elements to test. */
 const int theMaxSize = 100;
@@ -205,6 +226,9 @@ TEST (Test_CMtQueue_other)
 	// This test must complete in under a second (theMaxWait) to ensure that no wait periods
 	// have elapsed.
 	UNITTEST_TIME_CONSTRAINT (theMaxWait/2);
+	//TestDetails const details("testname", "suitename", "filename", 10);
+	// TimeConstraint t(10, details, 10);
+	//TimeHelpers::SleepMs(20);
 
 	// Test that the queue can be cleared. Add a number of entries then check that
 	// the specified number were added. Next clear the queue make sure it is empty.

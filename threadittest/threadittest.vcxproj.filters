@@ -16,9 +16,6 @@
     <ClCompile Include="src\TestActive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\TestDataBuffer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\testmtqueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -28,16 +25,10 @@
     <ClCompile Include="src\TestProtectedQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\TestSingleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\TestThreadIt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\TestThreadItObserver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TestThreadItWorkTargets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\TestTimeIt.cpp">
@@ -61,11 +52,11 @@
     <ClCompile Include="src\threaditiftest\ThreadItInterfaceTest.cpp">
       <Filter>threaditiftest</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\uintdataitem.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\threaditiftest\CIComponentA.h">
       <Filter>threaditiftest</Filter>
     </ClInclude>
@@ -83,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="src\threaditiftest\targetver.h">
       <Filter>threaditiftest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uintdataitem.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

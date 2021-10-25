@@ -1,3 +1,21 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
  * Title: CActive
  * Description: Class cActive is the base class for Active Objects in a system.
@@ -35,7 +53,7 @@ namespace
 
 // Initialise the count of the number of created CActive instances.
 volatile UINT CActive::m_theThreadCount = 0;
-volatile long CActive::m_theRunningThreadCount = 0;//sh 19/10/2010
+volatile long CActive::m_theRunningThreadCount = 0;
 CRITICAL_SECTION CActive::m_csHandleSet;
 int InitcsHandleSet = CActive::InitCSHandleSet();
 std::set<HANDLE> CActive::m_HandleSet;
@@ -327,7 +345,6 @@ bool CActive::setThreadName (const string& theThreadName)
  */
 UINT CActive::getThreadCount ()
 {
-	//sh 19/10/2010 the number of instances of CActive is not the number of currently running thread,
 	// CActive could still be alive when the thread is not running any more
 	//return m_theThreadCount; 
 	return m_theRunningThreadCount;
@@ -383,7 +400,6 @@ bool CActive::waitForZeroThreads (ULONG theTimeOut)
 unsigned int __stdcall CActive::threadStub (void* pObject)
 {
 	int theNumThreads = 0;
-	//string theThreadName ("CActive");//sh 13/10/2010 
 	log4cpp::Category* ptheLogger = NULL;
 	CActive* pThreadObject = NULL;
 
@@ -391,13 +407,11 @@ unsigned int __stdcall CActive::threadStub (void* pObject)
 	pThreadObject = static_cast<CActive*>(pObject);
 	pThreadObject->m_isThreadRunning = true;
 	pThreadObject->setThreadName( pThreadObject->m_theThreadName, -1);
-	//theThreadName = pThreadObject->getThreadName (); //sh 13/10/2010 marked as memory leak by memory validator. 
-	//don't know why. Anyway no one is using theThreadName, so remove it; 
 	// Start a logger for this instance.
 	//ptheLogger = &(log4cpp::Category::getInstance (theThreadName));
 	ptheLogger = pThreadObject->getInstanceLogger ();
 	// Indicate that the thread is started.
-	InterlockedIncrementAcquire(&m_theRunningThreadCount);//sh 19/10/2010
+	InterlockedIncrementAcquire(&m_theRunningThreadCount);
 
 	if (::performanceLogger.isDebugEnabled())
 	{
@@ -428,7 +442,7 @@ unsigned int __stdcall CActive::threadStub (void* pObject)
 	// On exit from the method that represents the thread of control, stop
 	// thread execution.
 	pThreadObject->m_isThreadRunning = false;
-	InterlockedDecrementAcquire(&m_theRunningThreadCount);//sh 19/10/2010
+	InterlockedDecrementAcquire(&m_theRunningThreadCount);
 
 	if (::performanceLogger.isDebugEnabled())
 	{

@@ -1,3 +1,21 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
  * Title: TestProtectedQueue
  * Description: TestProtectedQueue contains unit tests for the CProtectedQueue class. 
@@ -18,9 +36,10 @@
 #include <log4cpp/BasicConfigurator.hh>
 #include <log4cpp/PropertyConfigurator.hh>
 #include "dataitem.h"
+#include "uintdataitem.h"
 #include "threadit.h"
 #include "observer.h"
-#include "uintdataitem.h"
+//#include "uintdataitem.h"
 #include "threaditmessage.h"
 
 #include <memory>
@@ -340,7 +359,7 @@ TEST (Test_ThreadIt_startWork_with_callback_1)
   log4cpp::Category *logger = &(log4cpp::Category::getInstance ("TestThreadIt"));
   logger->info ("Testing - Test_ThreadIt_startWork_with_callback_1");
 
-  UNITTEST_TIME_CONSTRAINT (theMaxWait/4);
+  UNITTEST_TIME_CONSTRAINT (theMaxWait/4); 
 
   ptheWork = new CWorkPackIt ();
   ptheWork->m_theInstruction = THREADIT_TEST_METHOD; 

@@ -1,3 +1,21 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
  * Title: CThreadIt
  * Description: Class CThreadIt provides a mechanism to utilise a separate thread of
@@ -12,7 +30,7 @@
  * clients in a separate thread of execution. When processing is complete,
  * the client is advised by an asynchronoust notification mechanism.
  *
- * Class CThreadIt is used as the base class when implement methods that
+ * Class CThreadIt is used as the base class when implementing methods that
  * perform work on behalf of clients. A work package is allocated to a
  * method that is then invoked each time the client requests the work
  * package be executed. The customised class provides these methods and the
@@ -601,8 +619,7 @@ public:
 	 * Method getSelfThreadItPtr returns a shared pointer to this instance - that is to itself.
 	 * This is useful when telling other instances to reply to to me in response to a message.
 	 * sent to them.
-	 * \return a shared pointer to myself. This pointer is obtained using
-	 * shared_from_this ().
+	 * Return a shared pointer to myself. This pointer is obtained using shared_from_this ().
 	 */
 	 ThreadItPtr getSelfThreadItPtr ();
 

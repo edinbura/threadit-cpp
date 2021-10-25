@@ -14,12 +14,6 @@
     <ClCompile Include="src\active.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\DataBuffer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\dataqueue.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\isafethreaditinterface.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -27,12 +21,6 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Observer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\QLock.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\singleton.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\stdafx.cpp">
@@ -56,9 +44,6 @@
     <ClCompile Include="src\TimeIt.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\worktarget.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Active.h">
@@ -67,13 +52,7 @@
     <ClInclude Include="src\apputils.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\DataBuffer.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\dataitem.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\DataQueue.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\icloneable.h">
@@ -92,12 +71,6 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\ProtectedQueue.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\QLock.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\singleton.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\stdafx.h">
@@ -130,13 +103,7 @@
     <ClInclude Include="src\threaditobserver.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ThreadItWorkTargets.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\TimeIt.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\worktarget.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\utils.h">

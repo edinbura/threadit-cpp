@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
 
 #ifndef _THREADITCALLBACK
 #define _THREADITCALLBACK
@@ -6,10 +23,11 @@
 #include "dataitem.h"
 #include "subject.h"
 /**
- * class CThreadItCallback extends class CSubject. The class allows a value to be incremented
- * and the total number of increments to be counted. In this way the behaviour of the
- * observer can be evaluated.
- */
+ * class CThreadItCallback extends class CSubject. An instance of this class 
+ * allows a callback to be invoked from within a threadit to invoke a method
+ * in another threadit. This callback can also be invoked in the periodic method
+ * of the invoking threadit. 
+ */ 
 class CThreadItCallback : public CSubject
 {
 protected:

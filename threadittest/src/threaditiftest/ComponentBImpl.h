@@ -1,9 +1,27 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
  * Title: ComponentBImpl
  * Description: The declaration for the implementation class of Component B
  *  
- * Copyright: Copyright (c) 2012 Road and Maritime Services
- * @author Nirosh Gunaratne
+ * Copyright: Copyright (c) 2012 Ashkel Software
+ * @author Ari Edinburg
  * @version 1.0
  * $Date: 2012/08/16 10:00:00 $
  */

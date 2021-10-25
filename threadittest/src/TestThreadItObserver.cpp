@@ -1,3 +1,21 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
  * Title: TestThreadItObserver
  * Description: TestThreadItObserver contains unit tests for the CThreadItNotifier and CThreadItObserver 
@@ -6,14 +24,13 @@
  * can be regression tested as part of an automated test suite. 
  *
  * Copyright: Copyright (c) 2008 Ashkel Software 
- * @author Shishir Ron
  * @version 1.0
  * $Revision: 1.1 $<br>
  * $Date: 2010/05/21 02:38:06 $
  */
 
 #include "stdafx.h"
-#include <UnitTest++.h>
+#include "UnitTest++.h"
 #include <log4cpp/Category.hh>
 #include <log4cpp/BasicConfigurator.hh>
 #include <log4cpp/PropertyConfigurator.hh>

@@ -1,3 +1,21 @@
+/*-------------------------------------------------------------------------*/
+/* Copyright (C) 2021 by Ashkel Software                                   */
+/* ari@ashkel.com.au                                                       */
+/*                                                                         */
+/* This file is part of the threadit library.                              */
+/*                                                                         */
+/* The threadit library is free software; you can redistribute it and/or   */
+/* modify it under the terms of The Code Project Open License (CPOL) 1.02  */
+/*                                                                         */
+/* The threadit library is distributed in the hope that it will be useful, */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the CPOL       */
+/* License for more details.                                               */
+/*                                                                         */
+/* You should have received a copy of the CPOL License along with this     */
+/* software.                                                               */
+/*-------------------------------------------------------------------------*/
+
 /**
  * Title: CActive
  * Description: Class cActive is the base class for Active Objects in a system. 
@@ -19,8 +37,6 @@
 #include <windows.h>
 #include <string.h>
 #include <log4cpp/Category.hh>
-
-
 /**
  * Class CActive is used as the base class that manages the lifecycle
  * of a thread within the application. Support is provided to 
@@ -55,7 +71,7 @@ class CActive
 	  log4cpp::Category* m_ptheLogger;
 	  /** m_theThreadCount is the current total number of created CActive instances. */
 	  static volatile UINT m_theThreadCount;
-    /** m_theRunningThreadCount is the number of created CActive instances currently running. */ //sh 19/10/2010
+    /** m_theRunningThreadCount is the number of created CActive instances currently running. */
 	  static volatile long m_theRunningThreadCount;
 	  
 	  // CRITICAL_SECTION to protect m_HandleSet
@@ -80,7 +96,7 @@ class CActive
 	  //After execution, don't try to access or stop any 
 	  //threadit, otherwise would cause corruption.
 	  //Any resouces associated with it will NOT be released properly, should only be used at the end
-	  //of the program when it needs to terminate a process quikly.
+	  //of the program when it needs to terminate a process quickly.
 	  static void KillAllThreads();
 	  //this function always return 0, used to initlize m_csHandleSet
 	  static int InitCSHandleSet();
@@ -101,7 +117,7 @@ class CActive
 	   * instance, the destructor must ensure that the thread has terminated at 
 	   * this point. The debug version of this class checks that the thread handle
 	   * is invalid otherwise the method asserts. The thread handle must be invalid
-	   * when the destructor is called as this indicates that the thread has	terminated.
+	   * when the destructor is called as this indicates that the thread has terminated.
 	   */
 	  virtual ~CActive ();
 
